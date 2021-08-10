@@ -28,4 +28,9 @@ ec.order.extraFields.pickup_time_select = {
   }
 };
 
-Ecwid.refreshConfig();
+if (
+  typeof(Ecwid) == 'object'
+  && typeof(Ecwid.refreshConfig) == 'object'
+) {
+  Ecwid.refreshConfig();
+}
