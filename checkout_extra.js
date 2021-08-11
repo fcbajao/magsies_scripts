@@ -12,12 +12,12 @@ ec.order.extraFields.pickup_time_select = {
   'orderDetailsDisplaySection': 'order_comments',
   // Default date picker presets
   'datePickerOptions': {
-    'minDate': new Date(2021, 8, 20), // Order is prepared for 2 hours minimum. Hiding 2 hours from the current time. Default is 0
-    'maxDate': new Date(2021, 8, 21),
-    'showTime': true,
-    'incrementMinuteBy': 30,
+    minDate: new Date(2021, 8, 20), // Order is prepared for 2 hours minimum. Hiding 2 hours from the current time. Default is 0
+    maxDate: new Date(2021, 8, 21),
+    showTime: true,
+    incrementMinuteBy: 30,
     // limit available hours for each week day
-    'limitAvailableHoursWeekly': {
+    limitAvailableHoursWeekly: {
       'FRI': [
         ['11:00', '18:00']
       ],
