@@ -4,7 +4,7 @@ ec.order = ec.order || {};
 ec.order.extraFields = ec.order.extraFields || {};
 
 // Customize time and date selection for order pickup datepicker
-ec.order.extraFields.pickup_time_select = {
+ec.order.extraFields.ecwid_order_pickup_time = {
   'title': 'Select date of pickup',
   'required': true,
   'type': 'datetime',
@@ -30,7 +30,7 @@ ec.order.extraFields.pickup_time_select = {
 
 if (
   typeof(Ecwid) == 'object'
-  && typeof(Ecwid.refreshConfig) == 'object'
+  && typeof(Ecwid.refreshConfig) == 'function'
 ) {
   Ecwid.refreshConfig();
 }
