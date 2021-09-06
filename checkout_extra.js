@@ -31,13 +31,17 @@ const enabledDates = [
 ];
 
 function buildDatePicker() {
-  flatpickr('input[name=pickup_datetime]', {
-    enableTime: true,
-    dateFormat: "F j, Y h:i K",
-    minTime: "11:00",
-    maxTime: "18:00",
-    enable: enabledDates
-  })
+  Ecwid.OnPageLoaded.add(function(page) {
+    if (page.type == "CHECKOUT_ADDRESS") {
+      flatpickr('input[name=pickup_datetime]', {
+        enableTime: true,
+        dateFormat: "F j, Y h:i K",
+        minTime: "11:00",
+        maxTime: "18:00",
+        enable: enabledDates
+      })
+    }
+  });
 }
 
 const flatpickr_url = 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js';
