@@ -25,9 +25,9 @@ css.href = flatpickr_css_url;
 document.head.appendChild(css);
 
 const enabledDates = [
-  '2021-09-10', '2021-09-11',
-  '2021-09-17', '2021-09-18',
-  '2021-09-24', '2021-09-25'
+  new Date(2021, 8, 10), new Date(2021, 8, 11),
+  new Date(2021, 8, 17), new Date(2021, 8, 18),
+  new Date(2021, 8, 24), new Date(2021, 8, 25),
 ];
 
 function buildDatePicker() {
@@ -44,5 +44,8 @@ const flatpickr_url = 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpic
 const scr = document.createElement('script');
 scr.type = 'text/javascript';
 scr.src = flatpickr_url;
-scr.onload = buildDatePicker;
+scr.addEventListener("load", function(event) {
+  console.log("magsies script loaded");
+  buildDatePicker();
+});
 document.head.appendChild(scr);
