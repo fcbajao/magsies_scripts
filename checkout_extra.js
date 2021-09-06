@@ -16,10 +16,11 @@ ec.order = ec.order || {};
 ec.order.extraFields = ec.order.extraFields || {};
 
 ec.order.extraFields.pickup_datetime = {
-    'title': 'Select date and time of pickup',
-    'type': 'text',
-    'required': true,
-    'checkoutDisplaySection': 'pickup_details'
+  'title': 'Select date and time of pickup',
+  'type': 'text',
+  'required': true,
+  'checkoutDisplaySection': 'pickup_details',
+  'orderDetailsDisplaySection': 'shipping_info'
 };
 
 if (
