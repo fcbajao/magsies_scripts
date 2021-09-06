@@ -4,10 +4,27 @@ css.rel = 'stylesheet';
 css.href = flatpickr_css_url;
 document.head.appendChild(css);
 
+const enabledDates = [
+  '2021-09-10', '2021-09-11',
+  '2021-09-17', '2021-09-18',
+  '2021-09-24', '2021-09-25'
+];
+
+function buildDatePicker() {
+  flatpickr('input[name=pickup_datetime]', {
+    enableTime: true,
+    dateFormat: "F j, Y h:i K",
+    minTime: "11:00",
+    maxTime: "18:00",
+    enable: enabledDates
+  })
+}
+
 const flatpickr_url = 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js';
 const scr = document.createElement('script');
 scr.type = 'text/javascript';
 scr.src = flatpickr_url;
+scr.onload = buildDatePicker;
 document.head.appendChild(scr);
 
 // Initialize extra fields
@@ -29,17 +46,3 @@ if (
 ) {
   Ecwid.refreshConfig();
 }
-
-const enabledDates = [
-  '2021-09-10', '2021-09-11',
-  '2021-09-17', '2021-09-18',
-  '2021-09-24', '2021-09-25'
-];
-
-flatpickr('input[name=pickup_datetime]', {
-  enableTime: true,
-  dateFormat: "F j, Y h:i K",
-  minTime: "11:00",
-  maxTime: "18:00",
-  enable: enabledDates
-})
