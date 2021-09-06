@@ -1,3 +1,23 @@
+// Initialize extra fields
+ec = ec || {};
+ec.order = ec.order || {};
+ec.order.extraFields = ec.order.extraFields || {};
+
+ec.order.extraFields.pickup_datetime = {
+  'title': 'Pickup date and time',
+  'type': 'text',
+  'required': true,
+  'checkoutDisplaySection': 'pickup_details',
+  'orderDetailsDisplaySection': 'shipping_info'
+};
+
+if (
+  typeof(Ecwid) == 'object'
+  && typeof(Ecwid.refreshConfig) == 'function'
+) {
+  Ecwid.refreshConfig();
+}
+
 const flatpickr_css_url = 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css';
 const css = document.createElement('link');
 css.rel = 'stylesheet';
@@ -26,23 +46,3 @@ scr.type = 'text/javascript';
 scr.src = flatpickr_url;
 scr.onload = buildDatePicker;
 document.head.appendChild(scr);
-
-// Initialize extra fields
-ec = ec || {};
-ec.order = ec.order || {};
-ec.order.extraFields = ec.order.extraFields || {};
-
-ec.order.extraFields.pickup_datetime = {
-  'title': 'Pickup date and time',
-  'type': 'text',
-  'required': true,
-  'checkoutDisplaySection': 'pickup_details',
-  'orderDetailsDisplaySection': 'shipping_info'
-};
-
-if (
-  typeof(Ecwid) == 'object'
-  && typeof(Ecwid.refreshConfig) == 'function'
-) {
-  Ecwid.refreshConfig();
-}
