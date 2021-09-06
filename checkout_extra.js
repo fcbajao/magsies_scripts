@@ -36,7 +36,7 @@ ec.order.extraFields.pickup_datetime = {
   'title': 'Pickup date and time',
   'type': 'text',
   'required': true,
-  'checkoutDisplaySection': 'pickup_methods',
+  'checkoutDisplaySection': 'pickup_details',
   'orderDetailsDisplaySection': 'shipping_info'
 };
 
