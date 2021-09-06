@@ -16,10 +16,10 @@ ec.order = ec.order || {};
 ec.order.extraFields = ec.order.extraFields || {};
 
 ec.order.extraFields.pickup_datetime = {
-  'title': 'Select date and time of pickup',
+  'title': 'Pickup date and time',
   'type': 'text',
   'required': true,
-  'checkoutDisplaySection': 'pickup_details',
+  'checkoutDisplaySection': 'pickup_methods',
   'orderDetailsDisplaySection': 'shipping_info'
 };
 
@@ -29,3 +29,17 @@ if (
 ) {
   Ecwid.refreshConfig();
 }
+
+const enabledDates = [
+  '2021-09-10', '2021-09-11',
+  '2021-09-17', '2021-09-18',
+  '2021-09-24', '2021-09-25'
+];
+
+flatpickr('input[name=pickup_datetime]', {
+  enableTime: true,
+  dateFormat: "F j, Y h:i K",
+  minTime: "11:00",
+  maxTime: "18:00",
+  enable: enabledDates
+})
