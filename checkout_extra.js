@@ -1,8 +1,14 @@
+const flatpickr_css_url = 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css';
+const css = document.createElement('link');
+css.rel = 'stylesheet';
+css.href = flatpickr_css_url;
+document.head.appendChild(css);
+
 const flatpickr_url = 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js';
-const s = document.createElement('script');
-s.type = 'text/javascript';
-s.src = flatpickr_url;
-document.head.appendChild(s);
+const scr = document.createElement('script');
+scr.type = 'text/javascript';
+scr.src = flatpickr_url;
+document.head.appendChild(scr);
 
 // Initialize extra fields
 ec = ec || {};
