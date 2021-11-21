@@ -24,15 +24,21 @@ css.rel = 'stylesheet';
 css.href = flatpickr_css_url;
 document.head.appendChild(css);
 
-const enabledDates = [
-  new Date(2021, 8, 10), new Date(2021, 8, 11),
-  new Date(2021, 8, 17), new Date(2021, 8, 18),
-  new Date(2021, 8, 24), new Date(2021, 8, 25),
-];
-
 function buildDatePicker() {
+  const enabledDates = [
+    flatpickr.parseDate("2021-11-26", "Y-m-d"),
+    flatpickr.parseDate("2021-11-27", "Y-m-d"),
+    flatpickr.parseDate("2021-12-02", "Y-m-d"),
+    flatpickr.parseDate("2021-12-03", "Y-m-d"),
+    flatpickr.parseDate("2021-12-17", "Y-m-d"),
+    flatpickr.parseDate("2021-12-18", "Y-m-d"),
+    flatpickr.parseDate("2021-12-23", "Y-m-d")
+  ];
+
   Ecwid.OnPageLoaded.add(function(page) {
+    console.log("magsies custom OnPageLoaded " + page.type);
     if (page.type == "CHECKOUT_ADDRESS") {
+      console.log('magsies init flatpickr');
       flatpickr('input[name=pickup_datetime]', {
         enableTime: true,
         dateFormat: "F j, Y h:i K",
